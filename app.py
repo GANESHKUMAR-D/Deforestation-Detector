@@ -70,7 +70,6 @@ def count_trees_faces_and_people_camera_one_minute():
     print(f"Final people count (including faces): {max_people_count}")
     print(f"Final face count: {max_face_count}")
 
-
 def detect_trees(frame):
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     lower_green = np.array([35, 40, 40])
@@ -103,7 +102,6 @@ def detect_trees(frame):
 
     return result, len(tree_contours)
 
-
 def detect_people(frame):
     people_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fullbody.xml')
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -116,7 +114,6 @@ def detect_people(frame):
 
     return result, len(people)
 
-
 def detect_faces(frame):
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -128,7 +125,6 @@ def detect_faces(frame):
         cv2.putText(result, "Face", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 2)
 
     return result, len(faces)
-
 
 if __name__ == "__main__":
     count_trees_faces_and_people_camera_one_minute()
