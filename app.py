@@ -3,7 +3,7 @@ import numpy as np
 import time
 
 def count_trees_faces_and_people_camera_one_minute():
-    # Initialize the webcam
+    # Initialize  webcam
     cap = cv2.VideoCapture(0)  # 0 is usually the default camera
 
     # Check if camera opened successfully
